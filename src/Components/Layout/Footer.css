@@ -1,0 +1,10 @@
+.footer {
+    display: flex;
+    position: sticky;
+    justify-content: space-around;
+    background-color: #20232A;
+    margin-bottom: -10%;
+    margin-top: 8.15rem;
+    padding: 1em 0 1em 0;
+    color: #fff;
+}

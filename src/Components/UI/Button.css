@@ -1,0 +1,27 @@
+.btn {
+    cursor: pointer;
+    font: inherit;
+    color: white;
+    background-color: #414141;
+    border: 1px solid #414141;
+    border-radius: 4px;
+    padding: 0rem 2rem;
+}
+
+.button:hover {
+    background-color: #414141;
+    border-color: #f3f0f0;
+  }
+  
+  .toggle {
+    margin-top: 1rem;
+    background-color: transparent;
+    color: #636b7e;
+    border: none;
+    padding: 0.15rem 1.5rem;
+  }
+  
+  .toggle:hover {
+    background-color: transparent;
+    color: #ae82cc;
+  }
