@@ -49,7 +49,6 @@ const ContextProvider = (props) => {
         }
       )
       .then((res) => {
-        // setItems([...res.data]);
         console.log(res.data);
         console.log("called");
       })
@@ -62,9 +61,6 @@ const ContextProvider = (props) => {
         `https://react-http-a080a-default-rtdb.firebaseio.com/${username}.json`
       )
       .then((res) => {
-        // setItems([...res.data]);
-        // console.log(res.data)
-        // console.log("called");
         console.log(res.data.orderItems);
         updateItems(res.data.orderItems);
       })
