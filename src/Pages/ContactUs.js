@@ -18,7 +18,7 @@ function ContactUs() {
     };
 
     const response = await fetch(
-      "https://react-http-a080a-default-rtdb.firebaseio.com/contacts.json",
+      "https://ecommerce-website-3164b-default-rtdb.firebaseio.com/contacts.json",
       {
         method: "POST",
         body: JSON.stringify(contact),

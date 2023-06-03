@@ -1,10 +1,10 @@
-import { useState, useRef, useContext } from "react"
+import { useState, useRef, useContext } from "react";
 // import { useHistory } from 'react-router-dom'
 import classes from "./AuthForm.module.css";
 import AuthContext from "../../Store/auth-context";
 
 const AuthForm = () => {
-//   const history = useHistory()
+  //   const history = useHistory()
   const emaiInputRef = useRef();
   const passwordInputRef = useRef();
   const authCtx = useContext(AuthContext);
@@ -25,7 +25,7 @@ const AuthForm = () => {
 
     if (isLogin) {
       fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCY-VGJzQO4PuIAWLAzUqOd4c2XvpMOQFs",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC__m-6lfV4OETzuEs5JW0qvas6jfwTcbs",
         {
           method: "POST",
           body: JSON.stringify({
@@ -52,7 +52,7 @@ const AuthForm = () => {
           }
         })
         .then((data) => {
-            console.log(data)
+          console.log(data);
           if (data.idToken) {
             // console.log(data.idToken);
             authCtx.logIn(data.idToken, enteredEmail);
@@ -60,7 +60,7 @@ const AuthForm = () => {
           }
         })
         .catch((err) => {
-            console.log(err)
+          console.log(err);
           alert(err);
         });
     }
@@ -69,7 +69,7 @@ const AuthForm = () => {
     //     })
     else {
       fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCY-VGJzQO4PuIAWLAzUqOd4c2XvpMOQFs",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC__m-6lfV4OETzuEs5JW0qvas6jfwTcbs",
         {
           method: "POST",
           body: JSON.stringify({
@@ -84,6 +84,9 @@ const AuthForm = () => {
       ).then((res) => {
         setIsLoading(false);
         if (res.ok) {
+          alert("Sign up successfull, login to continue");
+          emaiInputRef.current.value = "";
+          passwordInputRef.current.value = "";
         } else {
           return res.json().then((data) => {
             console.log(data);

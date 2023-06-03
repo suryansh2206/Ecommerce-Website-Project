@@ -6,7 +6,7 @@ const ContextProvider = (props) => {
   const [items, updateItems] = useState([]);
   const [totalAmount, settotalAmount] = useState(0);
 
-  let username = localStorage.getItem("email");
+  let username = localStorage.getItem("email") || " ";
   let t = "";
   for (let i = 0; i < username.length; i++) {
     if (username[i] === "." || username[i] === "@") {
@@ -43,7 +43,7 @@ const ContextProvider = (props) => {
   if (items[0]) {
     axios
       .put(
-        `https://react-http-a080a-default-rtdb.firebaseio.com/${username}.json`,
+        `https://ecommerce-website-3164b-default-rtdb.firebaseio.com/${username}.json`,
         {
           orderItems: items,
         }
@@ -58,7 +58,7 @@ const ContextProvider = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://react-http-a080a-default-rtdb.firebaseio.com/${username}.json`
+        `https://ecommerce-website-3164b-default-rtdb.firebaseio.com/${username}.json`
       )
       .then((res) => {
         console.log(res.data.orderItems);

@@ -19,7 +19,7 @@ const CartItem = (props) => {
   const removeHandler = (item) => {
     axios
       .delete(
-        `https://react-http-a080a-default-rtdb.firebaseio.com/${username}/${item._id}.json`
+        `https://ecommerce-website-3164b-default-rtdb.firebaseio.com/${username}/${item._id}.json`
       )
       .then((res) => {
         // window.location.reload();
